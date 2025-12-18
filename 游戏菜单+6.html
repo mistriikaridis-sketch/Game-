@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashley的游戏屋 - 精选独立游戏导航</title>
+    <meta name="description" content="Ashley的游戏世界 - 精选独立游戏与IO游戏导航">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', '"Noto Sans SC"', 'sans-serif'],
+                    },
+                    colors: {
+                        // 模仿 Boilerplate 的 Slate 色系，更具科技感
+                        slate: {
+                            850: '#1e293b', 
+                            900: '#0f172a',
+                        },
+                        primary: {
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* 平滑滚动 */
+        html { scroll-behavior: smooth; }
+        
+        /* 细微的卡片上浮动画 */
+        .game-card { 
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s; 
+        }
+        .game-card:hover { 
+            transform: translateY(-2px); 
+            border-color: #3b82f6; /* 悬停时边框变蓝 */
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.1);
+        }
+        
+        /* 图片容器的遮罩效果 */
+        .image-container {
+            overflow: hidden;
+        }
+        .game-img {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .game-card:hover .game-img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-900 antialiased min-h-screen flex flex-col font-sans">
+
+    <header class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-md">
+                    A
+                </div>
+                <span class="font-bold text-xl tracking-tight">Ashley's GameHub</span>
+            </div>
+            <nav class="hidden md:flex gap-6 text-sm font-semibold text-gray-600">
+                <a href="#" class="hover:text-primary-600 transition-colors">首页</a>
+                <a href="#" class="hover:text-primary-600 transition-colors">IO游戏</a>
+                <a href="#" class="hover:text-primary-600 transition-colors">独立佳作</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-24 pb-16">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+            <div class="inline-flex items-center justify-center px-4 py-1.5 mb-6 text-sm font-medium text-primary-600 bg-blue-50 rounded-full border border-blue-100">
+                <span class="relative flex h-2 w-2 mr-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                全新收录 12 款精选游戏
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-6">
+                欢迎来到 <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-indigo-600">Ashley</span> 的<br class="hidden md:block" />沉浸式游戏世界
+            </h1>
+            
+            <p class="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                无需下载，点击即玩。这里汇聚了全球最具创意的 IO 对战与独立游戏佳作。
+            </p>
+        </div>
+
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="game-card bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col h-full">
+                    <div class="image-container h-48 bg-gray-100 relative">
+                        <img src="https://images.unsplash.com/photo-1425082661705-1834bfd09dca?q=80&w=800&auto=format&fit=crop" 
+                             alt="萌兽战场" class="game-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">萌兽战场 (Mope.io)</h3>
+                        <p class="text-gray-500 text-sm mb-6 flex-grow leading-relaxed">
+                            从一只小老鼠开始，吃食物、躲避天敌、不断进化，最终成为食物链顶端的霸主。
+                        </p>
+                        <a href="https://mope.io/?referrer=grok.com" target="_blank" 
+                           class="w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-white font-medium text-center rounded-lg transition-colors duration-200">
+                            开始游戏
+                        </a>
+                    </div>
+                </div>
+
+                <div class="game-card bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col h-full">
+                    <div class="image-container h-48 bg-gray-100 relative">
+                        <img src="https://images.unsplash.com/photo-1589241062272-c0a000072dfa?q=80&w=800&auto=format&fit=crop" 
+                             alt="绝地尸潮" class="game-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">绝地尸潮 (ZombsRoyale)</h3>
+                        <p class="text-gray-500 text-sm mb-6 flex-grow leading-relaxed">
+                            2D版“吃鸡”大逃杀。跳伞、搜集武器、躲避毒圈，在百人混战中成为最后的幸存者。
+                        </p>
+                        <a href="https://zombsroyale.io/?referrer=grok.com" target="_blank" 
+                           class="w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-white font-medium text-center rounded-lg transition-colors duration-200">
+                            开始游戏
+                        </a>
+                    </div>
+                </div>
+
+                <div class="game-card bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col h-full">
+                    <div class="image-container h-48 bg-gray-100 relative">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800&auto=format&fit=crop" 
+                             alt="几何大作战" class="game-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">几何大作战 (Diep.io)</h3>
+                        <p class="text-gray-500 text-sm mb-6 flex-grow leading-relaxed">
+                            控制你的几何坦克，射击方块升级，加点属性，转职成拥有不同弹幕的强力战车。
+                        </p>
+                        <a href="https://diep.io/?referrer=grok.com" target="_blank" 
+                           class="w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-white font-medium text-center rounded-lg transition-colors duration-200">
+                            开始游戏
+                        </a>
+                    </div>
+                </div>
+
+                <div class="game-card bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col h-full">
+                    <div class="image-container h-48 bg-gray-100 relative">
+                        <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=800&auto=format&fit=crop" 
+                             alt="火力全开" class="game-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">火力全开 (Krunker.io)</h3>
+                        <p class="text-gray-500 text-sm mb-6 flex-grow leading-relaxed">
+                            快节奏的像素风格第一人称射击游戏。无需下载，打开浏览器就能体验硬核的枪战快感。
+                        </p>
+                        <a href="https://krunker.io/?game=SIN:43k3p" target="_blank" 
+                           class="w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-white font-medium text-center rounded-lg transition-colors duration-200">
+                            开始游戏
+                        </a>
+                    </div>
+                </div>
+
+                <div class="game-card bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col h-full">
+                    <div class="image-container h-48 bg-gray-100 relative">
+                        <img src="https://images.unsplash.com/photo-1532630571098-79a3d222b00d?q=80&w=800&auto=format&fit=crop" 
+                             alt="魔法配方" class="game-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">魔法配方 (Little Alchemy 2)</h3>
+                        <p class="text-gray-500 text-sm mb-6 flex-grow leading-relaxed">
+                            从土、水、火、气四大基本元素开始，发挥想象力组合它们，创造出世界万物。
+                        </p>
+                        <a href="https://littlealchemy2.com/" target="_blank" 
+                           class="w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-white font-medium text-center rounded-lg transition-colors duration-200">
+                            开始游戏
+                        </a>
+                    </div>
+                </div>
+
+                <div class="game-card bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col h-full">
+                    <div class="image-container h-48 bg-gray-100 relative">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop" 
+                             alt="咕噜吞吞" class="game-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">咕噜吞吞 (Slither.io)</h3>
+                        <p class="text-gray-500 text-sm mb-6 flex-grow leading-relaxed">
+                            经典的贪吃蛇大作战！收集光点变长，利用策略围堵其他玩家，成为地图上最大的蛇。
+                        </p>
+                        <a href="http://slither.com/io" target="_blank" 
+                           class="w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-white font-medium text-center rounded-lg transition-colors duration-200">
+                            开始游戏
+                        </a>
+                    </div>
+                </div>
+
+                <div class="game-card bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col h-full">
+                    <div class="image-container h-48 bg-gray-100 relative">
+                        <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=800&auto=format&fit=crop" 
+                             alt="建造大师" class="game-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">建造大师 (Townscaper)</h3>
+                        <p class="text-gray-500 text-sm mb-6 flex-grow leading-relaxed">
+                            没有目标，只有纯粹的建造快乐。轻轻点击海面，生成色彩斑斓的水上城镇和高塔。
+                        </p>
+                        <a href="https://oskarstalberg.com/Townscaper/#GSB0RARueC6Snc9E0lO5B" target="_blank" 
+                           class="w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-white font-medium text-center rounded-lg transition-colors duration-200">
+                            开始游戏
+                        </a>
+                    </div>
+                </div>
+
+                <div class="game-card bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col h-full">
+                    <div class="image-container h-48 bg-gray-100 relative">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop" 
+                             alt="堆起来" class="game-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">堆起来 (Sandspiel)</h3>
+                        <p class="text-gray-500 text-sm mb-6 flex-grow leading-relaxed">
+                            极富创意的落沙物理模拟。控制沙、水、火、植物，观察它们之间奇妙的化学反应。
+                        </p>
+                        <a href="https://sandspiel.club/" target="_blank" 
+                           class="w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-white font-medium text-center rounded-lg transition-colors duration-200">
+                            开始游戏
+                        </a>
+                    </div>
+                </div>
+
+                <div class="game-card bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col h-full">
+                    <div class="image-container h-48 bg-gray-100 relative">
+                        <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=800&auto=format&fit=crop" 
+                             alt="一起斯洛克" class="game-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">一起斯洛克 (PCOL)</h3>
+                        <p class="text-gray-500 text-sm mb-6 flex-grow leading-relaxed">
+                            极简风格的在线台球。叫上好友，或者独自练习，享受击球入袋的清脆快感。
+                        </p>
+                        <a href="http://www.heyzxz.me/pcol/" target="_blank" 
+                           class="w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-white font-medium text-center rounded-lg transition-colors duration-200">
+                            开始游戏
+                        </a>
+                    </div>
+                </div>
+
+                <div class="game-card bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col h-full">
+                    <div class="image-container h-48 bg-gray-100 relative">
+                        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=800&auto=format&fit=crop" 
+                             alt="黎明飞驰" class="game-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">黎明飞驰 (Slow Roads)</h3>
+                        <p class="text-gray-500 text-sm mb-6 flex-grow leading-relaxed">
+                            无尽的驾驶禅意体验。在程序生成的唯美风景中，伴着日出日落，没有终点，只有自由。
+                        </p>
+                        <a href="https://slowroads.io/#A2-552e15c5@0" target="_blank" 
+                           class="w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-white font-medium text-center rounded-lg transition-colors duration-200">
+                            开始游戏
+                        </a>
+                    </div>
+                </div>
+
+                <div class="game-card bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col h-full">
+                    <div class="image-container h-48 bg-gray-100 relative">
+                        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop" 
+                             alt="疯狂躲" class="game-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">疯狂躲 (Missile Game)</h3>
+                        <p class="text-gray-500 text-sm mb-6 flex-grow leading-relaxed">
+                            极度考验反应速度。在无尽的科幻隧道中控制导弹，躲避一切障碍。
+                        </p>
+                        <a href="https://missile-game.bwhmather.com/" target="_blank" 
+                           class="w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-white font-medium text-center rounded-lg transition-colors duration-200">
+                            开始游戏
+                        </a>
+                    </div>
+                </div>
+
+                <div class="game-card bg-white rounded-xl border border-gray-200 overflow-hidden flex flex-col h-full">
+                    <div class="image-container h-48 bg-gray-100 relative">
+                        <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?q=80&w=800&auto=format&fit=crop" 
+                             alt="快乐瞬间" class="game-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">快乐瞬间 (Moments)</h3>
+                        <p class="text-gray-500 text-sm mb-6 flex-grow leading-relaxed">
+                            一场关于光影与互动的艺术实验。放松身心，沉浸在美妙的视觉体验中。
+                        </p>
+                        <a href="https://moments.epic.net/" target="_blank" 
+                           class="w-full py-2.5 px-4 bg-slate-900 hover:bg-slate-800 text-white font-medium text-center rounded-lg transition-colors duration-200">
+                            开始游戏
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 mt-auto">
+        <div class="max-w-screen-xl mx-auto py-8 px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 bg-slate-900 rounded flex items-center justify-center text-white text-xs font-bold">A</div>
+                <p class="text-sm text-gray-500">© 2024 Ashley's GameHub. All rights reserved.</p>
+            </div>
+            <div class="flex gap-6 text-sm font-medium text-gray-500">
+                <a href="#" class="hover:text-slate-900">关于我们</a>
+                <a href="#" class="hover:text-slate-900">提交游戏</a>
+                <a href="#" class="hover:text-slate-900">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

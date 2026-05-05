@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life code 日报</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f7f5f0;
+      color: #2c2c2c;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 80px 24px 60px;
+    }
+
+    .container {
+      max-width: 680px;
+      width: 100%;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .main-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+    }
+
+    .sub-title {
+      font-size: 0.8rem;
+      color: #888;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background-color: #c41e3a;
+      margin: 0 auto 48px;
+    }
+
+    .article-list {
+      list-style: none;
+    }
+
+    .article-item {
+      display: flex;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid #e0ddd5;
+      transition: all 0.3s ease;
+    }
+
+    .article-item:first-child {
+      border-top: 1px solid #e0ddd5;
+    }
+
+    .article-marker {
+      display: none;
+    }
+
+    .article-link {
+      flex: 1;
+      text-decoration: none;
+      color: #2c2c2c;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      transition: color 0.3s ease;
+      text-align: right;
+    }
+
+    .article-link:hover {
+      color: #c41e3a;
+    }
+
+    .arrow {
+      margin-left: 16px;
+      color: #c41e3a;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      font-size: 1.2rem;
+    }
+
+    .article-link:hover .arrow {
+      opacity: 1;
+      transform: translateX(4px);
+    }
+
+    footer {
+      margin-top: 80px;
+      text-align: center;
+    }
+
+    .footer-line {
+      width: 24px;
+      height: 1px;
+      background-color: #ccc;
+      margin: 0 auto 16px;
+    }
+
+    .footer-text {
+      font-size: 0.75rem;
+      color: #aaa;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 60px 20px 40px;
+      }
+
+      .main-title {
+        font-size: 1.6rem;
+      }
+
+      .article-link {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="main-title">LifeCode</h1>
+      <p class="sub-title">Thinking & Writing</p>
+    </header>
+
+    <div class="divider"></div>
+
+    <ul class="article-list">
+      <li class="article-item">
+        <a href="./在项目死之前，先把它杀一遍.html" class="article-link">
+          在项目死之前，先把它杀一遍
+          <span class="arrow">→</span>
+        </a>
+      </li>
+      <li class="article-item">
+        <a href="./你以为自己在创业，其实你只是在逃跑.html" class="article-link">
+          你以为自己在创业，其实你只是在逃跑
+          <span class="arrow">→</span>
+        </a>
+      </li>
+    </ul>
+
+    <footer>
+      <div class="footer-line"></div>
+      <p class="footer-text">2026</p>
+    </footer>
+  </div>
+</body>
+</html>
